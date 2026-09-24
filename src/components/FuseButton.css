@@ -1,0 +1,49 @@
+.fuse-button {
+  position: relative;
+  overflow: hidden;
+
+  padding: 10px 15px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  border: 1px solid #ffffff1a;
+  border-radius: 25px;
+
+  background: #222;
+  color: white;
+
+  cursor: pointer;
+}
+
+.fuse-button:hover {
+  background: #333;
+}
+
+.fuse-active {
+  color: #c8ff32;
+}
+
+.fuse-progress {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+
+  background: #c8ff32;
+
+  animation-name: fuseBurn;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fuseBurn {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}

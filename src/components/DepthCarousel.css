@@ -1,0 +1,133 @@
+.depth-carousel {
+  position: relative;
+  width: 100%;
+  height: 510px;
+  perspective: 1400px;
+  overflow: hidden;
+}
+
+.depth-carousel-stage {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.depth-card {
+  position: absolute;
+  width: 310px;
+  height: 410px;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  border-radius: 28px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+}
+
+.depth-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.depth-card-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 70px 24px 24px;
+  color: white;
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0, 0, 0, 0.92)
+    );
+}
+
+.depth-card-overlay span {
+  color: #c8ff32;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+}
+
+.depth-card-overlay h3 {
+  margin: 7px 0;
+  font-size: 1.3rem;
+}
+
+.depth-card-overlay strong {
+  font-size: 1.1rem;
+}
+
+.depth-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #ffffff2b;
+  border-radius: 50%;
+
+  color: white;
+  background: #111111aa;
+  backdrop-filter: blur(12px);
+
+  cursor: pointer;
+}
+
+.depth-arrow:hover {
+  background: #c8ff32;
+  color: #111;
+}
+
+.depth-arrow-left {
+  left: 15px;
+}
+
+.depth-arrow-right {
+  right: 15px;
+}
+
+.depth-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 6px;
+
+  z-index: 100;
+}
+
+.depth-indicators button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: #777;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.depth-indicators button.active {
+  width: 28px;
+  background: #c8ff32;
+}
+
+@media (max-width: 700px) {
+  .depth-carousel {
+    height: 450px;
+  }
+
+  .depth-card {
+    width: 260px;
+    height: 360px;
+  }
+}
